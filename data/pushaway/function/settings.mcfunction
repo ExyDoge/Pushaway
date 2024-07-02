@@ -1,0 +1,4 @@
+tellraw @s ["§7============================\n§6[弹开]1.0.0 设置\n§7----------------------------"]
+execute if score pushaway_switcher pushaway_switch matches 0 run tellraw @s [{"text":"[开启]","color":"green","hoverEvent": {"action":"show_text","value": ["点击启用"]},"clickEvent": {"action":"run_command","value":"/function pushaway:enable"}}]
+execute if score pushaway_switcher pushaway_switch matches 1 run tellraw @s [{"text":"[关闭]","color":"red","hoverEvent": {"action":"show_text","value": ["点击禁用"]},"clickEvent": {"action":"run_command","value":"/scoreboard players set pushaway_switcher pushaway_switch 0"}}]
+tellraw @s ["§7============================"]
