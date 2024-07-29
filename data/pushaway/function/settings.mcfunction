@@ -2,3 +2,4 @@ tellraw @s ["§7============================\n§6[弹开]1.0.0 设置\n§7------
 execute if score pushaway_switcher pushaway_switch matches 0 run tellraw @s [{"text":"[开启]","color":"green","hoverEvent": {"action":"show_text","value": ["点击启用"]},"clickEvent": {"action":"run_command","value":"/function pushaway:enable"}}]
 execute if score pushaway_switcher pushaway_switch matches 1 run tellraw @s [{"text":"[关闭]","color":"red","hoverEvent": {"action":"show_text","value": ["点击禁用"]},"clickEvent": {"action":"run_command","value":"/scoreboard players set pushaway_switcher pushaway_switch 0"}}]
 tellraw @s ["§7============================"]
+tellraw @p [{"text":"[自定义推力...]","color":"gold","hoverEvent": {"action": "show_text","contents": "点击以自定义推力"},"clickEvent":{"action":"suggest_command","value":"/data modify storage minecraft:pushforce y set value <在此键入推力(用数字代表,默认10)>"}}]
